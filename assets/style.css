@@ -24,10 +24,11 @@
 .form {
     grid-column: 2;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
 
+    width: 12rem;
 
 }
