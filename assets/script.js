@@ -17,13 +17,18 @@ function displayLibrary() {
         const card = document.createElement("div");
         card.classList.add("card");
         
-        card.innerHTML = `${book.title}, ${book.author}, ${book.pages}, ${book.read ? "Yes" : "No"}`;
+        card.innerHTML = `${book.title}, ${book.author}, ${book.pages}, ${book.read ? "Read" : "Not read"}`;
 
         libraryContainer.appendChild(card);
     };
 };
 
 library.push(new Book("1984", "George Orwell", 328, true));
+
+function showForm() {
+    const form = document.querySelector(".form");
+    form.style.display = "flex";
+}
 
 function hideForm() {
     const form = document.querySelector(".form");
@@ -46,12 +51,6 @@ function addBook(event) {
 
     hideForm();
 };
-
-function showForm() {
-    const form = document.querySelector(".form");
-    form.style.display = "flex";
-}
-
 
 document.querySelector(".form").addEventListener("submit", addBook);
 document.querySelector(".show-form").addEventListener("click", showForm);
