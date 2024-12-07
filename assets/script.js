@@ -41,7 +41,11 @@ library.push(new Book("1984", "George Orwell", 328, true));
 
 function showForm() {
     const form = document.querySelector(".form");
-    form.style.display = "flex";
+    if(form.style.display === "none") {
+        form.style.display = "flex";
+    } else {
+        form.style.display = "none";
+    };
 }
 
 function hideForm() {
