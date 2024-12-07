@@ -17,7 +17,19 @@ function displayLibrary() {
         const card = document.createElement("div");
         card.classList.add("card");
         
-        card.innerHTML = `${book.title}, ${book.author}, ${book.pages}, ${book.read ? "Read" : "Not read"}`;
+        card.innerHTML = `
+        <div class="card-content">
+            <div class="title">Title: ${book.title}</div>
+            <div class="author">Author: ${book.author}</div>
+            <div class="pages">Pages: ${book.pages}</div>
+            <div class="read">Read: ${book.read ? "Yes" : "Not yet"}</div>
+        </div>`;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-button");
+        deleteButton.textContent = "×";
+
+        card.appendChild(deleteButton);
 
         libraryContainer.appendChild(card);
     };

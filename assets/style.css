@@ -9,12 +9,13 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: hsl(0, 0%, 10%);
-    background-color: hsl(0, 0%, 80%);
+    background-color: hsl(40, 4%, 86%);
     font-weight: lighter;
 }
 
 input {
     border: 1px solid hsl(0, 0%, 40%);
+    padding-left: 0.6rem;
 }
 
 button {
@@ -29,6 +30,17 @@ button {
 .card {
     padding: 1rem;
     border-bottom: 0.2px solid hsl(0, 0%, 40%);
+
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.delete-button {
+    height: 2rem;
+    width: 2rem;
+
+    text-align: center;
 }
 
 .form-container {
@@ -54,36 +66,39 @@ button {
     gap: 1rem;
 
     padding: 2rem;
-    border-radius: 16px;
 
     border: 1px solid hsl(0, 0%, 40%);
-    background-color: hsl(0, 0%, 80%);
+    background-color: hsl(40, 4%, 86%);
     color: hsl(0, 0%, 10%);
 }
 
 .input,
 .submit {
     width: 12rem;
-    border-radius: 8px;
 }
 
 .input {
     height: 1.6rem;
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(40, 4%, 86%);
     color: hsl(0, 0%, 10%);
 }
 
 .submit {
     height: 2.4rem;
     background-color: hsl(0, 0%, 20%);
-    color: hsl(0, 0%, 90%);
+    color: hsl(40, 4%, 86%);
 }
 
 .show-form {
     width: 3rem;
     height: 3rem;
-    border-radius: 50%;
+    
 
     border: 1px solid hsl(0, 0%, 10%);
+    background-color: hsl(0, 0%, 20%);
+    color: hsl(40, 4%, 86%);
+
+    font-size: 1.4rem;
+
 }
 
