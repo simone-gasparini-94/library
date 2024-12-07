@@ -26,33 +26,29 @@ button {
 .library {
     padding: 4rem;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
-@media(max-width: 1000px) {
-    .library {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 .card {
-
-    width: 100%;
-    padding: 2rem;
+    width: 22rem;
+    padding: 1rem;
     border: 1px solid hsl(0, 0%, 40%);
 
     display: flex;
     gap: 2rem;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.card-content {
+    padding: 1rem;
 }
 
 .remove-button {
-    height: 2rem;
-    width: 2rem;
+    height: 1.4rem;
+    width: 1.4rem;
 
     text-align: center;
 }
