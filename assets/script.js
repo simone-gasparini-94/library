@@ -25,13 +25,15 @@ function displayLibrary() {
             <div class="read">Read: ${book.read ? "Yes" : "Not yet"}</div>
         </div>`;
 
-        const deleteButton = document.createElement("button");
-        deleteButton.classList.add("delete-button");
-        deleteButton.textContent = "×";
+        const removeButton = document.createElement("button");
+        removeButton.classList.add("remove-button");
+        removeButton.textContent = "×";
 
-        card.appendChild(deleteButton);
+        card.appendChild(removeButton);
 
         libraryContainer.appendChild(card);
+
+        document.querySelector(".remove-button").addEventListener("click", removeBook);
     };
 };
 
@@ -63,6 +65,11 @@ function addBook(event) {
 
     hideForm();
 };
+
+function removeBook(index) {
+    library.splice(index, 1);
+    displayLibrary();
+}
 
 document.querySelector(".form").addEventListener("submit", addBook);
 document.querySelector(".show-form").addEventListener("click", showForm);
