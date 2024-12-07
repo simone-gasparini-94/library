@@ -72,6 +72,11 @@ button {
     color: hsl(0, 0%, 10%);
 }
 
+.icon {
+    display: inline-block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
 .input,
 .submit {
     width: 12rem;

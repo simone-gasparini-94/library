@@ -41,17 +41,21 @@ library.push(new Book("1984", "George Orwell", 328, true));
 
 function showForm() {
     const form = document.querySelector(".form");
+    const icon = document.querySelector(".icon");
+
     if(form.style.display === "none") {
         form.style.display = "flex";
+        icon.style.transform = "rotate(45deg)";
     } else {
         form.style.display = "none";
+        icon.style.transform = "rotate(0deg)";
     };
-}
+};
 
 function hideForm() {
     const form = document.querySelector(".form");
     form.style.display = "none";
-}
+};
 
 function addBook(event) {
     event.preventDefault();
