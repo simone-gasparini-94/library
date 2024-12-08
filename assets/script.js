@@ -39,11 +39,11 @@ function displayLibrary() {
         removeButton.classList.add("remove-button");
         removeButton.textContent = "×";
 
+        removeButton.addEventListener("click", () => removeBook(i));
+
         card.appendChild(removeButton);
 
         libraryContainer.appendChild(card);
-
-        document.querySelector(".remove-button").addEventListener("click", removeBook);
 
         const toggleSwitch = card.querySelector(".checkbox");
         toggleSwitch.addEventListener("change", () => {
@@ -55,18 +55,22 @@ function displayLibrary() {
     };
 };
 
-library.push(new Book("1984", "George Orwell", 328, true));
+library.push(new Book("Meow Meow", "Unknown Cat", 328, true));
+library.push(new Book("Woof Woof", "Unknown Dog", 253, true));
 
 function showForm() {
     const form = document.querySelector(".form");
     const icon = document.querySelector(".icon");
+    const mainContainer = document.querySelector(".main-container");
 
     if (form.style.display === "none" || form.style.display === "") {
         form.style.display = "flex";
         icon.style.transform = "rotate(45deg)";
+        mainContainer.classList.add("darkened");
     } else {
         form.style.display = "none";
         icon.style.transform = "rotate(0deg)";
+        mainContainer.classList.remove("darkened");
     };
 };
 
@@ -92,6 +96,12 @@ function addBook(event) {
     hideForm();
 
     updateCounter();
+
+    const form = document.querySelector(".form");
+    const mainContainer = document.querySelector(".main-container");
+
+    form.style.display = "none"; // Hide the form
+    mainContainer.classList.remove("darkened"); // Remove the darkened class
 };
 
 function removeBook(index) {
@@ -100,7 +110,7 @@ function removeBook(index) {
     displayLibrary();
 
     updateCounter();
-}
+};
 
 function updateCounter() {
     const totalNumber = document.querySelector(".total-number");

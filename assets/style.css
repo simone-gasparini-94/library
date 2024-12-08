@@ -29,14 +29,31 @@ body {
     background-color: var(--background);
     font-weight: lighter;
 
-    padding: 4rem;
 }
 
 h1 {
-    font-size: 8rem;
+    font-size: 9rem;
     font-style: italic;
     font-weight: bold;
     letter-spacing: 2px;
+
+    padding: 4rem;
+
+    white-space: nowrap;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: filter 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.main-container.darkened {
+    filter: blur(1px);
+    opacity: 0.8;
 }
 
 .counter {
@@ -49,6 +66,8 @@ h1 {
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
+
+    padding: 0 4rem 2rem 4rem;
 }
 
 input {
@@ -75,7 +94,7 @@ button {
     scroll-behavior: smooth;
     scrollbar-width: none;
 
-    margin: 4rem 0;
+    margin-left: 4rem;
 }
 
 .library::-webkit-scrollbar {
@@ -84,7 +103,7 @@ button {
 
 .card {
     width: 24rem;
-    height: 36rem;
+    height: 32rem;
     padding: 1rem;
     border: 1px solid var(--border);
 
@@ -126,6 +145,7 @@ button {
 .author {
     font-size: 2rem;
     white-space: nowrap;
+    color: var(--text-secondary);
 }
 
 .pages {
@@ -174,13 +194,20 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 1rem;
+    gap: 2rem;
 
-    padding: 2rem;
+    padding: 4rem;
 
     border: 1px solid var(--border);
     background-color: var(--secondary-background);
     color: var(--text-primary);
+}
+
+.form-header {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
 }
 
 .icon {
@@ -190,25 +217,26 @@ button {
 
 .input,
 .submit {
-    width: 12rem;
+    width: 30rem;
+    font-size: 1.2rem;
 }
 
 .input {
-    height: 2rem;
+    height: 3rem;
     background-color: var(--background);
     color: hsl(0, 0%, 10%);
 }
 
 .submit {
-    height: 2.8rem;
+    height: 5rem;
     background-color: var(--accent);
     color: var(--secondary-background);
     border: none;
 }
 
 .show-form {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     
     border: none;
     background-color: var(--accent);
