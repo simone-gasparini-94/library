@@ -19,17 +19,20 @@ function displayLibrary() {
         
         card.innerHTML = `
         <div class="card-content">
-            <div class="label title">Title:</div>
-            <div class="title">${book.title}</div>
-            <div class="label author">Author:</div>
-            <div class="author">${book.author}</div>
-            <div class="label pages">Pages:</div>
-            <div class="pages">${book.pages}</div>
-            <div class="label read">Read:</div>
-            <label class="switch" id="read">
-                <input class="checkbox" type="checkbox" ${book.read ? "checked" : ""} data-index="${i}">
-                <div class="slider"></div>
-            </label>
+            <div class="top">
+                <div class="title">${book.title}</div>
+                <div class="author">${book.author}</div>
+            </div>
+            <div class="bottom">
+                <div class="pages">${book.pages} pages</div>
+                <div class="read">
+                    <div class="label read">Read:</div>
+                    <label class="switch" id="read">
+                        <input class="checkbox" type="checkbox" ${book.read ? "checked" : ""} data-index="${i}">
+                        <div class="slider"></div>
+                    </label>
+                </div>
+            </div>
         </div>`;
 
         const removeButton = document.createElement("button");

@@ -42,35 +42,76 @@ button {
     padding: 4rem;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 2rem;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.library::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari, Edge) */
 }
 
 .card {
-    width: 22rem;
+    width: 24rem;
+    height: 36rem;
     padding: 1rem;
     border: 1px solid hsl(0, 0%, 40%);
 
     display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 1.2rem;
 
+    flex-shrink: 0;
 }
 
 .card-content {
-    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 1.2rem;
+}
 
-    margin-left: 1rem;
+.top {
+    
+}
 
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(4, 1fr);
-
-    column-gap: 1rem;
-    row-gap: 0.6rem;
-
+.bottom {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+    color: hsl(0, 0%, 10%);
+    overflow: hidden;
+}
+
+.author {
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.pages {
+    color: hsl(0, 0%, 30%);
+}
+
+.read {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    color: hsl(0, 0%, 30%);
+
 }
 
 .remove-button {
