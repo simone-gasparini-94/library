@@ -13,10 +13,13 @@
             <input class="input" type="text" id="title">
             <input class="input" type="text" id="author">
             <input class="input" type="number" id="pages">
-            <label>
-                <input type="checkbox" id="read">
-                READ
-            </label>
+            <div class="switch-container">
+                <p>READ</p>
+                <label class="switch" id="read">
+                    <input class="checkbox" type="checkbox">
+                    <div class="slider"></div>
+                </label>
+            </div>
             <button class="submit" type="submit">SUBMIT</button>
         </form>
         <button class="show-form">
