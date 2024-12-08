@@ -27,8 +27,8 @@ function displayLibrary() {
                 <div class="pages">${book.pages} pages</div>
                 <div class="read">
                     <div class="label read">Read:</div>
-                    <label class="switch" id="read">
-                        <input class="checkbox" type="checkbox" ${book.read ? "checked" : ""} data-index="${i}">
+                    <label class="switch">
+                        <input class="checkbox" type="checkbox" id="read" ${book.read ? "checked" : ""} data-index="${i}">
                         <div class="slider"></div>
                     </label>
                 </div>
@@ -48,7 +48,10 @@ function displayLibrary() {
         const toggleSwitch = card.querySelector(".checkbox");
         toggleSwitch.addEventListener("change", () => {
             library[i].read = toggleSwitch.checked; // Update the book's read status
+            updateCounter();
         });
+
+        updateCounter();
     };
 };
 
@@ -87,16 +90,34 @@ function addBook(event) {
     displayLibrary();
 
     hideForm();
+
+    updateCounter();
 };
 
 function removeBook(index) {
     library.splice(index, 1);
+
     displayLibrary();
+
+    updateCounter();
 }
 
+function updateCounter() {
+    const totalNumber = document.querySelector(".total-number");
+    const readNumber = document.querySelector(".read-number");
+    const unreadNumber = document.querySelector(".unread-number");
+
+    const readBooks = library.filter(book => book.read);
+    const unreadBooks = library.filter(book => !book.read);
+
+    totalNumber.textContent = `TOTAL: ${library.length}`;
+    readNumber.textContent = `READ: ${readBooks.length}`;
+    unreadNumber.textContent = `NOT READ YET: ${unreadBooks.length}`;
+}
 
 
 document.querySelector(".form").addEventListener("submit", addBook);
 document.querySelector(".show-form").addEventListener("click", showForm);
 
 displayLibrary();
+updateCounter();
